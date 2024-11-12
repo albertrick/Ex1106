@@ -1,6 +1,7 @@
 package com.example.ex1106;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,11 +22,12 @@ import androidx.core.view.WindowInsetsCompat;
  * @since       9/14/2020
  */
 
-public class SpinDemo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class SpinDemo extends AppCompatActivity implements
+        AdapterView.OnItemSelectedListener {
 
     TextView tV;
     Spinner spin;
-    String [] town={"Tel-Aviv","Haifa","Jerusalem","Beer-Sheva"};
+    String [] town;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,12 @@ public class SpinDemo extends AppCompatActivity implements AdapterView.OnItemSel
  */
         tV = (TextView) findViewById(R.id.tV);
         spin = (Spinner) findViewById(R.id.spin);
+        town = getResources().getStringArray(R.array.towns);
 
         spin.setOnItemSelectedListener(this);
 
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this,
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,town);
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, town);
         spin.setAdapter(adp);
     }
 
@@ -55,6 +58,7 @@ public class SpinDemo extends AppCompatActivity implements AdapterView.OnItemSel
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+        Log.i("SpinDemo","Nothing selected");
     }
 
     /**
