@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Ex1106</string>
+    <string-array name="towns">
+        <item>Tel-Aviv</item>
+        <item>Haifa</item>
+        <item>Jerusalem</item>
+        <item>Beer-Sheva</item>
+        <item>Eilat</item>
+    </string-array>
 </resources>

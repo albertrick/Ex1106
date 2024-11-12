@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tV = (TextView) findViewById(R.id.tV);
         lV = (ListView) findViewById(R.id.lV);
 
-        lV.setOnItemClickListener(this);
         lV.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        lV.setOnItemClickListener(this);
 
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this,
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,town);
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, town);
         lV.setAdapter(adp);
     }
 
